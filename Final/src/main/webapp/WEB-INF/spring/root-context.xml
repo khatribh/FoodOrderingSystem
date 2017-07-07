@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="userValidator" class="com.my.spring.validator.UserValidator"></bean>
+	<bean id="userDao" class="com.my.spring.dao.UserDAO" ></bean>
+	
+	<bean id="hotelValidator" class="com.my.spring.validator.HotelValidator"></bean>
+	<bean id="hotelDao" class="com.my.spring.dao.HotelDAO" ></bean>
+	
+	<bean id="cartDao" class="com.my.spring.dao.CartDAO" ></bean>
+	
+	<bean id="adminDao" class="com.my.spring.dao.AdminDAO" ></bean>
+	
+	<bean id="foodItemValidator" class="com.my.spring.validator.FoodItemValidator"></bean>
+	<bean id="foodItemDao" class="com.my.spring.dao.FoodItemDAO" ></bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+</beans>
